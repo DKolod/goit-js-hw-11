@@ -1,0 +1,95 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #eeeef5;
+    color: #212121;
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+.search-form {
+    text-align: center;
+    background-color: rgb(77, 77, 206);
+    padding: 20px;
+    margin-bottom: 16px;
+}
+
+.search-form input {
+    height: 30px;
+    border-radius: 15px;
+    border-color: rgb(40, 23, 100);
+}
+
+.search-form button {
+    width: 60px;
+    height: 30px;
+    border-radius: 15px;
+    border-color: rgb(90, 85, 109);
+    background-color: rgb(207, 207, 211);
+}
+
+.is-hidden {
+    display: none;
+}
+
+.load-more {
+    width: 110px;
+    height: 30px;
+    border-radius: 15px;
+    border-color: rgb(101, 101, 235);
+    color: white;
+    background-color: rgb(70, 70, 238);
+}
+
+.button-box {
+    text-align: center;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+       
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    text-decoration: none;
+}
+
+.info-item {
+    display: flex;
+    color: black;
+}
+
+.info-item__value {
+    color: grey;
+}
+
+.photo-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.gallery__image {
+    margin: 10px;
+display: block;
+object-fit: cover;
+height: 260px;
+}
+.info {
+margin: 5px;
+width: 345px;
+    
+}
