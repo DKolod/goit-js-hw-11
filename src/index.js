@@ -4,9 +4,8 @@ import SimpleLightbox from "simplelightbox";
 import "simplelightbox/dist/simple-lightbox.min.css";
 import NewsApiService from './js/api';
 import './css/styles.css';
-// const axios = require('axios');
 
- let lightbox = new SimpleLightbox('.gallery a');
+let lightbox = new SimpleLightbox('.gallery a');
 const newsApiService = new NewsApiService();
 
 const refs = {
@@ -19,12 +18,12 @@ refs.form.addEventListener("submit", onSearch);
 refs.loadMoreBtn.addEventListener("click", onLoadMore);
 refs.galleryContainer.addEventListener("click", onImageBoxClick);
 
-
 hideButton();
 
 function onSearch(evn) {
   evn.preventDefault();
   clearCardContainer();
+  
   newsApiService.nameVal = evn.currentTarget.elements.searchQuery.value; 
     if (newsApiService.nameVal.trim() === "") {
       hideButton();
@@ -34,7 +33,7 @@ function onSearch(evn) {
   newsApiService.resetPage();
   
   newsApiService.searchRequest().then(data => {
-    // console.log(data);
+    
     if (data.hits.length === 0) {
       hideButton();
       Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
@@ -47,9 +46,7 @@ function onSearch(evn) {
   });
 }
 
-
 function onLoadMore() {
-
   newsApiService.searchRequest().then(data => {
 
     try {
@@ -60,14 +57,10 @@ function onLoadMore() {
       } catch (error) {
        console.log("error: ", error)
       hideButton();
-             
+        
    }
- 
-
   });
-
 }
-
 
 function appendCardMarkup(elem) {
 refs.galleryContainer.insertAdjacentHTML("beforeend", cardTemplates(elem))
@@ -85,10 +78,8 @@ function showButton() {
   refs.loadMoreBtn.classList.remove("is-hidden")
 }
 
-
 function onImageBoxClick(event) {
   event.preventDefault();
-
 };
 
 
